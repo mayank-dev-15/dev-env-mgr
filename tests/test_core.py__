@@ -1,0 +1,9 @@
+import pytest
+from click.testing import CliRunner
+from dev_env_mgr.cli import main
+def test_help():
+    r = CliRunner().invoke(main, ['--help'])
+    assert r.exit_code == 0
+def test_status():
+    r = CliRunner().invoke(main, ['status'])
+    assert r.exit_code == 0
